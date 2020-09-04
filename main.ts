@@ -1,6 +1,4 @@
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    music.baDing.play()
-})
+let projectile: Sprite = null
 let mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
@@ -24,3 +22,26 @@ scene.setBackgroundColor(1)
 info.startCountdown(1000)
 music.baDing.play()
 info.changeScoreBy(1)
+forever(function () {
+    if (controller.A.isPressed()) {
+        projectile = sprites.createProjectileFromSprite(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . 4 4 4 . . . . 
+            . . . . . . . 4 4 5 5 4 4 . . . 
+            . . . . . . 4 5 5 5 5 5 4 4 . . 
+            . . . 4 4 4 5 2 2 2 2 5 5 4 . . 
+            . . 4 4 4 5 5 5 5 2 2 5 5 4 . . 
+            . . . . . . . 4 4 5 5 5 4 . . . 
+            . . . . . . . . . 4 4 4 . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `, mySprite, 60, 0)
+        music.baDing.play()
+    }
+})
