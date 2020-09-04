@@ -19,3 +19,4 @@ let mySprite = sprites.create(img`
 scene.setBackgroundColor(1)
 controller.moveSprite(mySprite)
 music.baDing.play()
+info.setLife(3)
