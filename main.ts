@@ -18,3 +18,4 @@ let mySprite = sprites.create(img`
     `, SpriteKind.Player)
 scene.setBackgroundColor(1)
 controller.moveSprite(mySprite)
+info.setScore(0)
