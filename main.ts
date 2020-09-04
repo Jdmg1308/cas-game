@@ -18,5 +18,5 @@ let mySprite = sprites.create(img`
     `, SpriteKind.Player)
 scene.setBackgroundColor(1)
 controller.moveSprite(mySprite)
+info.startCountdown(10)
 music.baDing.play()
-info.setLife(3)
